@@ -102,39 +102,27 @@
 
 
     /** LED ************************************************************/
-    #define mInitAllLEDs()      LATD &= 0xF0; TRISD &= 0xF0;
+    #define mInitAllLEDs()      LATD &= 0x04; TRISD &= 0x04; //0000 0100
     
     #define mLED_1              LATDbits.LATD0
     #define mLED_2              LATDbits.LATD1
-    #define mLED_3              LATDbits.LATD2
-    #define mLED_4              LATDbits.LATD3
     
     #define mGetLED_1()         mLED_1
     #define mGetLED_2()         mLED_2
-    #define mGetLED_3()         mLED_3
-    #define mGetLED_4()         mLED_4
 
     #define mLED_1_On()         mLED_1 = 1;
     #define mLED_2_On()         mLED_2 = 1;
-    #define mLED_3_On()         mLED_3 = 1;
-    #define mLED_4_On()         mLED_4 = 1;
     
     #define mLED_1_Off()        mLED_1 = 0;
     #define mLED_2_Off()        mLED_2 = 0;
-    #define mLED_3_Off()        mLED_3 = 0;
-    #define mLED_4_Off()        mLED_4 = 0;
     
     #define mLED_1_Toggle()     mLED_1 = !mLED_1;
     #define mLED_2_Toggle()     mLED_2 = !mLED_2;
-    #define mLED_3_Toggle()     mLED_3 = !mLED_3;
-    #define mLED_4_Toggle()     mLED_4 = !mLED_4;
     
     /** SWITCH *********************************************************/
-    #define mInitAllSwitches()  TRISBbits.TRISB4=1;TRISBbits.TRISB5=1;
-    #define mInitSwitch2()      TRISBbits.TRISB4=1;
-    #define mInitSwitch3()      TRISBbits.TRISB5=1;
-    #define sw2                 PORTBbits.RB4
-    #define sw3                 PORTBbits.RB5
+    #define mInitAllSwitches()  TRISDbits.TRISD2=1;
+    #define mInitSwitch2()      TRISDbits.TRISD2=1;
+    #define sw2                 PORTDbits.RD2
     
     /** USB external transceiver interface (optional) ******************/
     #define tris_usb_vpo        TRISBbits.TRISB3    // Output
