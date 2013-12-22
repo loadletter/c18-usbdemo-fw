@@ -6,7 +6,7 @@ AS = MPASMWIN.exe
 CC = /opt/microchip/mplabc18/v3.40/bin/mcc18
 LD = /opt/microchip/mplabc18/v3.40/bin/mplink
 AR = /opt/microchip/mplabc18/v3.40/bin/mplib
-RM = rm
+RM = rm -f
 
 USB\ Device\ -\ CDC\ -\ Basic\ Demo\ -\ \ C18\ -\ PICDEM\ FSUSB.cof : Objects/PICDEM\ FSUSB/usb_descriptors.o Objects/PICDEM\ FSUSB/main.o Objects/PICDEM\ FSUSB/usb_function_cdc.o Objects/PICDEM\ FSUSB/usb_device.o
 	$(LD) -p 18F4550 "rm18f4550 - HID Bootload.lkr" -l"/opt/microchip/mplabc18/v3.40/lib" "Objects/PICDEM FSUSB/usb_descriptors.o" "Objects/PICDEM FSUSB/main.o" "Objects/PICDEM FSUSB/usb_function_cdc.o" "Objects/PICDEM FSUSB/usb_device.o" -u_CRUNTIME -z__MPLAB_BUILD=1 -o"USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.cof" -m"USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.map" -w
@@ -24,5 +24,5 @@ Objects/PICDEM\ FSUSB/usb_device.o : ../../Microchip/USB/usb_device.c /opt/micro
 	$(CC) -p=18F4550 -I"/opt/microchip/mplabc18/v3.40/h" -I"../../Microchip/Include" -I"." "../../Microchip/USB/usb_device.c" -fo="./Objects/PICDEM FSUSB/usb_device.o" -Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 
 clean : 
-	$(RM) "Objects/PICDEM FSUSB/usb_descriptors.o" "Objects/PICDEM FSUSB/main.o" "Objects/PICDEM FSUSB/usb_function_cdc.o" "Objects/PICDEM FSUSB/usb_device.o" "USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.cof" "USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.hex"
+	$(RM) "Objects/PICDEM FSUSB/usb_descriptors.o" "Objects/PICDEM FSUSB/main.o" "Objects/PICDEM FSUSB/usb_function_cdc.o" "Objects/PICDEM FSUSB/usb_device.o" "USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.cof" "USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.hex" "USB Device - CDC - Basic Demo -  C18 - PICDEM FSUSB.map"
 
